@@ -1,6 +1,7 @@
 angular.module('digit', [
   'digit.services', 
   'digit.auth',
+  'digit.interface',
   'firebase',
   'ngRoute'
 ])
@@ -9,6 +10,10 @@ angular.module('digit', [
     .when('/signin', {
       templateUrl: 'app/auth/signin.html',
       controller: 'AuthController'
+    })
+    .when('/interface', {
+      templateUrl: 'app/interface/interface.html',
+      controller: 'InterfaceController'
     })
     .otherwise({ redirectTo: '/signin'})
 
