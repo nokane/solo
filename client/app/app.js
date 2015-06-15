@@ -1,6 +1,7 @@
 angular.module('digit', [
   'digit.services', 
   'digit.auth',
+  'firebase',
   'ngRoute'
 ])
 .config(function($routeProvider, $httpProvider) {
