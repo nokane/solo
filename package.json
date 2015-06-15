@@ -1,0 +1,23 @@
+{
+  "name": "2015-05-solo",
+  "version": "1.0.0",
+  "description": "An AngularJS single page application for Typing Speed Challenges",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nokane/2015-05-solo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nokane/2015-05-solo/issues"
+  },
+  "homepage": "https://github.com/nokane/2015-05-solo/#readme",
+  "dependencies": {
+    "express": "^4.12.4",
+    "firebase": "^2.2.7"
+  }
+}
