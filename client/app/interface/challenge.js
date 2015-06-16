@@ -8,6 +8,11 @@ angular.module('digit.challenge', [])
   console.log('INSIDE THE CHALLENGE CONTROLLER', $scope.challenger);
   $scope.accept = function() {
     //start the game between the two players
+    console.log('challenge has been accepted', $scope.challenger.username );
+    console.log($scope.challenger.username + 'beginGame');
+    var acceptChallenge = new Firebase("https://dazzling-inferno-751.firebaseio.com/newgame/");
+    var sendReady = acceptChallenge.push(Auth.getChallenges());
+
   }
 });
 
