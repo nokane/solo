@@ -1,0 +1,12 @@
+#my-words {
+  width:400px;
+}
+
+.wrongWord {
+  background-color: yellow;
+  color: red;
+}
+
+.correctWord {
+  color: green;
+}
