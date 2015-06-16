@@ -3,11 +3,11 @@ var firebase = require("firebase");
 
 
 var app = express();
-
-// app.use('/client', express.static('client'));
-// app.use(express.static(__dirname + '/client'));
+app.set('port', process.env.PORT || 3000);
 require('./config/middleware.js')(app, express);
 
 
-console.log('Application is listening on 3000');
-app.listen(3000);
+
+app.listen(app.get('port'), function() {
+  console.log('Application is running on port', app.get('port'));
+});
