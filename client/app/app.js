@@ -3,6 +3,7 @@ angular.module('digit', [
   'digit.auth',
   'digit.playerList',
   'digit.interface',
+  'digit.challenge',
   'firebase',
   'ui.router'
 ])
@@ -20,6 +21,10 @@ angular.module('digit', [
     .state('interface.playerList', {
       url: '/playerList',
       templateUrl: 'app/interface/playerList.html'
+    })
+    .state('interface.challenge', {
+      url: '/challenge',
+      templateUrl: 'app/interface/challenge.html'
     });
-
+  
 })
