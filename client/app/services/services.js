@@ -3,7 +3,7 @@ angular.module('digit.services', [])
 .factory('Auth', function ($http, $location, $window, $rootScope) {
   var challenges = [];
   var me = {};
-  var challenge = {}
+  var challenge = {};
   var addChallenge = function(obj) {
     challenges.push(obj);
   };
