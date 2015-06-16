@@ -82,7 +82,11 @@ angular.module('digit.game', [])
   oppResults.on('child_added', function(childSnapshot, prevChildKey) {
     $scope.space += ' ';
     $scope.$apply( function() {
-      $scope.oppCompletedWords.push(childSnapshot.val());  
+      $scope.oppCompletedWords.push(childSnapshot.val());
+      $scope.oppCorrect += 1;
+      if (!childSnapshot.val()[2]) {
+        $scope.oppWrong += 1;
+      } 
     });
     return;
     // console.log($scope.oppCompletedWords);
