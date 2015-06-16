@@ -9,6 +9,9 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/nokane/2015-05-solo.git"
+  },  
+  "engines": {
+    "node": "0.12.2"
   },
   "author": "",
   "license": "ISC",
