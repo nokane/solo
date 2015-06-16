@@ -2,7 +2,7 @@
   <h2>Let the game begin!!!</h1>
   <span ng-show="mustShow" ng-model="counter"> {{ counter }} Seconds until the Typing challenge begins </span>
   <div id="my-words">
-    <h3>Your progress</h3>
+    <h3 ng-model="me">Your progress ({{me.username}})</h3>
     <div>
       <span ng-show="meCounterShow" ng-model="meCorrect"> Typed words: {{ meCorrect }}</span>
     </div>
@@ -12,8 +12,19 @@
     <div>
       <input ng-model="typedWord" type="text" ng-keyup="$event.keyCode == 32 ? spacePressed() : null" id="wordinput" autocomplete="off"/> 
       <span ng-model="currentWord"> {{ currentWord }} </span>
+    </div>
+
+    <span ng-repeat="word in completedWords" class="{{word[3]}}"> {{word[1]}} </span>
+  </div>
+  <div id="opp-words">
+    <h3 ng-model="challenger">Opponent progress ({{challenger.username}})</h3>
     <div>
-
-  <span ng-repeat="word in completedWords" class="{{word[3]}}"> {{word[1]}} </span>
-
+      <span ng-show="meCounterShow" ng-model="oppCorrect"> Typed words: {{ oppCorrect }}</span>
+    </div>
+    <div>
+      <span ng-show="meCounterShow" ng-model="oppWrong"> Misspelled words: {{ oppWrong }} </span>
+    </div>
+    <span ng-repeat="oppWord in oppCompletedWords" class="{{oppWord[3]}}">{{oppWord[1]}} </span>
+  </div>
+  <span ng-model="space">{{space}}</span>
 </div>
