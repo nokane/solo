@@ -22,11 +22,19 @@ angular.module('digit.services', [])
   var getMe = function() {
     return me;
   };
+  var findOpponent = function() {
+    for(var key in challenge) {
+      if (challenge[key].userid != me.userid) {
+        return challenge[key];
+      }
+    }
+    return;
+  };
   var comparePlayer = function(obj) {
+    challenge = obj;
     for(var key in obj) {
       if (obj[key].userid === me.userid) {
         console.log("YOU WILL BE IN A TYPING MATCH!");
-        // challenge = obj;
         $location.path('/game');
         $rootScope.$apply(function() {
           console.log('apply the /game location');
@@ -36,9 +44,10 @@ angular.module('digit.services', [])
       }
     }
     return false;
-  }
+  };
 
   return {
+    findOpponent: findOpponent,
     comparePlayer: comparePlayer,
     setMe: setMe,
     getMe: getMe,
