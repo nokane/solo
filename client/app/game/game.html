@@ -1,3 +1,5 @@
 <div id='game' ng-controller="GameController">
   <h2>Let the game begin!!!</h1>
+  <span ng-model="counter"> {{ counter }} </span>
+  <timer autostart="true" countdown="30" interval="1000"> {{countdown}} {{seconds}} seconds {{secondsS}} </timer>
 </div>
