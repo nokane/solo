@@ -4,6 +4,8 @@ angular.module('digit.services', [])
   var challenges = [];
   var me = {};
   var challenge = {};
+  var myResults = {};
+  var oppResults = {};
   var addChallenge = function(obj) {
     challenges.push(obj);
   };
@@ -24,10 +26,20 @@ angular.module('digit.services', [])
   };
   var setResultsMe = function(typed, misspelled, arr) {
     console.log("SET RESULTS ME");
+    myResults = { 'numWords': typed, 'numWrong': misspelled, 'results': arr};
   };
   var setResultsOpp = function(typed, misspelled, arr) {
     console.log("SET RESULTS OPP");
+    oppResults = { 'numWords': typed, 'numWrong': misspelled, 'results': arr};
   };
+
+  var getResultsMe = function() {
+    return myResults;
+  };
+  var getResultsOpp = function() {
+    return oppResults;
+  };
+
   var findOpponent = function() {
     for(var key in challenge) {
       if (challenge[key].userid != me.userid) {
@@ -55,6 +67,8 @@ angular.module('digit.services', [])
   return {
     setResultsMe: setResultsMe,
     setResultsOpp: setResultsOpp,
+    getResultsOpp: getResultsOpp,
+    getResultsMe: getResultsMe,
     findOpponent: findOpponent,
     comparePlayer: comparePlayer,
     setMe: setMe,
