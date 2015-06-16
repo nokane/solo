@@ -1,11 +1,13 @@
 #my-words {
   display:inline-block;
   width:400px;
+  padding:25px;
 }
 
 #opp-words {
   display:inline-block;
   width:400px;
+  padding:25px;
 }
 
 
@@ -18,4 +20,16 @@
   color: green;
 }
 
+.oppResults {
+  display:inline-block;
+  width:550px;
+  padding:25px;
+
+}
+
+.myResults {
+  display:inline-block;
+  width:550px;
+  padding:25px;
+}
 
