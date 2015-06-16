@@ -4,7 +4,7 @@ var firebase = require("firebase");
 
 var app = express();
 app.set('port', process.env.PORT || 3000);
-require('./config/middleware.js')(app, express);
+require('./server/config/middleware.js')(app, express);
 
 
 
