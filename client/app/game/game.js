@@ -36,9 +36,17 @@ angular.module('digit.game', [])
         //send signal to server to begin the game
         $scope.gameWords = $scope.testWords.slice();
         $scope.currentWord = $scope.gameWords[$scope.currCount][0];
-        //start game timer;
+        $scope.endGame();
       }
     }, 1000);
+  };
+
+  $scope.endGame = function() {
+    $timeout(function() { 
+      Auth.setResultsMe($scope.meCorrect, $scope.meWrong, $scope.completedWords);
+      Auth.setResultsOpp($scope.oppCorrect, $scope.oppWrong, $scope.oppCompletedWords);
+      $location.path('/results');
+    }, 20000);
   };
 
   var myResults = new Firebase("https://dazzling-inferno-751.firebaseio.com/gameresults/1/" 
