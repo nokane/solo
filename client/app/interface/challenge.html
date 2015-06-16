@@ -1,0 +1,16 @@
+<div id="challenge" ng-controller="ChallengeController">
+  
+  
+
+  <h3>You have been challenged by:</h3>
+  <div>
+    <div>
+      <span ng-model="challenger"> {{ challenger.username}}</span>
+    </div>
+    <div>
+      <span ng-click="accept()">ACCEPT</span>
+      <span ng-click="decline()">DECLINE</span>
+    </div>
+  </div>
+  <div ui-view></div>
+</div>
