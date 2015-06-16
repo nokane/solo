@@ -22,6 +22,12 @@ angular.module('digit.services', [])
   var getMe = function() {
     return me;
   };
+  var setResultsMe = function(typed, misspelled, arr) {
+    console.log("SET RESULTS ME");
+  };
+  var setResultsOpp = function(typed, misspelled, arr) {
+    console.log("SET RESULTS OPP");
+  };
   var findOpponent = function() {
     for(var key in challenge) {
       if (challenge[key].userid != me.userid) {
@@ -47,6 +53,8 @@ angular.module('digit.services', [])
   };
 
   return {
+    setResultsMe: setResultsMe,
+    setResultsOpp: setResultsOpp,
     findOpponent: findOpponent,
     comparePlayer: comparePlayer,
     setMe: setMe,
