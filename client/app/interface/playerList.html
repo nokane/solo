@@ -1,8 +1,14 @@
 <div id="playerList" ng-controller="PlayerListController">
+  
+
+
   <h3>All Active players</h3>
   <!-- <span ng-click="displayLoggedIn()">Show me logged in users</span> -->
   <ul>
-    <li ng-click="challenge()" ng-repeat="(key, value) in users">{{ value }}</li>
+    <li ng-click="challenge(key, value.username)" ng-repeat="(key, value) in users">{{ value.username }}</li>
   </ul>
   <div ui-view></div>
 </div>
+
+
+
