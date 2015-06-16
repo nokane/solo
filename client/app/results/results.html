@@ -1,4 +1,38 @@
 <div id='results' ng-controller="ResultsController">
   <h1> GAME OVER </h1>
   <h2> Here are the final results! </h2>
+  <h3 ng-model="winner"> {{winner}} </h3>
+  <div class="myResults">
+    <div>
+      <span ng-model="me">Your final typing speed results ({{me.username}})</span>
+    </div>
+    <div>
+      <div>
+        <span ng-model="myWPM">Words per minute: {{myWPM}}</span>
+      </div>
+      <div>
+        <span ng-model="myResults">Typed words in 60 seconds: {{myResults.numWords}}</span>
+      </div>
+      <div>
+        <span ng-model="myResults">Misspelled words: {{myResults.numWrong}}</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="oppResults">
+    <div>
+      <span ng-model="challenger">{{challenger.username}}'s final typing speed results</span>
+    </div>
+    <div>
+      <div>
+        <span ng-model="oppWPM">Words per minute: {{oppWPM}}</span>
+      </div>
+      <div>
+        <span ng-model="oppResults">Typed words in 60 seconds: {{oppResults.numWords}}</span>
+      </div>
+      <div>
+        <span ng-model="oppResults">Misspelled words: {{oppResults.numWrong}}</span>
+      </div>
+    </div>
+  </div>
 </div>
