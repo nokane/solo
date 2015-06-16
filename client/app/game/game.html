@@ -1,5 +1,19 @@
 <div id='game' ng-controller="GameController">
   <h2>Let the game begin!!!</h1>
-  <span ng-model="counter"> {{ counter }} </span>
-  <timer autostart="true" countdown="30" interval="1000"> {{countdown}} {{seconds}} seconds {{secondsS}} </timer>
+  <span ng-show="mustShow" ng-model="counter"> {{ counter }} Seconds until the Typing challenge begins </span>
+  <div id="my-words">
+    <h3>Your progress</h3>
+    <div>
+      <span ng-show="meCounterShow" ng-model="meCorrect"> Typed words: {{ meCorrect }}</span>
+    </div>
+    <div>
+      <span ng-show="meCounterShow" ng-model="meWrong"> Misspelled words: {{ meWrong }} </span>
+    </div>
+    <div>
+      <input ng-model="typedWord" type="text" ng-keyup="$event.keyCode == 32 ? spacePressed() : null" id="wordinput" autocomplete="off"/> 
+      <span ng-model="currentWord"> {{ currentWord }} </span>
+    <div>
+
+  <span ng-repeat="word in completedWords" class="{{word[3]}}"> {{word[1]}} </span>
+
 </div>
