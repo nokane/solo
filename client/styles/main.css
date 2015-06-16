@@ -1,6 +1,13 @@
 #my-words {
+  display:inline-block;
   width:400px;
 }
+
+#opp-words {
+  display:inline-block;
+  width:400px;
+}
+
 
 .wrongWord {
   background-color: yellow;
@@ -10,3 +17,5 @@
 .correctWord {
   color: green;
 }
+
+
