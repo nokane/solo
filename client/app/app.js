@@ -1,20 +1,25 @@
 angular.module('digit', [
   'digit.services', 
   'digit.auth',
+  'digit.playerList',
   'digit.interface',
   'firebase',
-  'ngRoute'
+  'ui.router'
 ])
-.config(function($routeProvider, $httpProvider) {
-  $routeProvider
-    .when('/signin', {
-      templateUrl: 'app/auth/signin.html',
-      controller: 'AuthController'
+.config(function($httpProvider, $stateProvider, $urlRouterProvider) {
+  $urlRouterProvider.otherwise('signin');
+  $stateProvider
+    .state('signin', {
+      url: '/signin',
+      templateUrl: 'app/auth/signin.html'
     })
-    .when('/interface', {
-      templateUrl: 'app/interface/interface.html',
-      controller: 'InterfaceController'
+    .state('interface', {
+      url: '/interface',
+      templateUrl: 'app/interface/interface.html'
     })
-    .otherwise({ redirectTo: '/signin'})
+    .state('interface.playerList', {
+      url: '/playerList',
+      templateUrl: 'app/interface/playerList.html'
+    });
 
 })
