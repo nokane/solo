@@ -46,7 +46,7 @@ angular.module('digit.game', [])
       Auth.setResultsMe($scope.meCorrect, $scope.meWrong, $scope.completedWords);
       Auth.setResultsOpp($scope.oppCorrect, $scope.oppWrong, $scope.oppCompletedWords);
       $location.path('/results');
-    }, 20000);
+    }, 30000);
   };
 
   var myResults = new Firebase("https://dazzling-inferno-751.firebaseio.com/gameresults/1/" 
