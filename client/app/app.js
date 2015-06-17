@@ -6,6 +6,7 @@ angular.module('digit', [
   'digit.challenge',
   'digit.game',
   'digit.results',
+  'digit.waiting',
   'firebase',
   'ui.router'
 ])
@@ -27,6 +28,10 @@ angular.module('digit', [
     .state('interface.challenge', {
       url: '/challenge',
       templateUrl: 'app/interface/challenge.html'
+    })
+    .state('interface.waiting', {
+      url: '/waiting',
+      templateUrl: 'app/interface/waiting.html'
     })
     .state('game', {
       url: '/game',
