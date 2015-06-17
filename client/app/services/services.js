@@ -4,6 +4,7 @@ angular.module('digit.services', [])
   var challenges = [];
   var me = {};
   var challenge = {};
+  var challenged = {};
   var myResults = {};
   var oppResults = {};
   var addChallenge = function(obj) {
@@ -32,6 +33,14 @@ angular.module('digit.services', [])
     console.log("SET RESULTS OPP");
     oppResults = { 'numWords': typed, 'numWrong': misspelled, 'results': arr};
   };
+
+  var sentChallenge = function(obj) {
+    challenged = obj;
+  };
+
+  var iChallenged = function() {
+    return challenged;
+  }
 
   var getResultsMe = function() {
     return myResults;
@@ -65,6 +74,8 @@ angular.module('digit.services', [])
   };
 
   return {
+    sentChallenge: sentChallenge,
+    iChallenged: iChallenged,
     setResultsMe: setResultsMe,
     setResultsOpp: setResultsOpp,
     getResultsOpp: getResultsOpp,
