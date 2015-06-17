@@ -2,12 +2,14 @@
   display:inline-block;
   width:400px;
   padding:25px;
+  float:left;
 }
 
 #opp-words {
   display:inline-block;
   width:400px;
   padding:25px;
+  float:left;
 }
 
 
@@ -33,3 +35,12 @@
   padding:25px;
 }
 
+.btn {
+  padding: 10px;
+}
+
+#wordinput {
+  width: 175px;
+  height: 30px;
+  font-size: 20px
+}
